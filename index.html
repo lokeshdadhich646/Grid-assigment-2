@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/rsgLFX0/shoe1.jpg">
+    <title>Shoebox - Affordable Shoe Store</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: url("https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+            color: #222;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        header h1 span {
+            color: #ff9800;
+        }
+
+        /* GRID SECTION */
+        .container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .grid-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .grid {
+            width: 70vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(3px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #ff5722;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background: #ff9800;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e68900;
+        }
+
+        #msg {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #00ff84;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header id="home">
+        <h1>SHOE<span>BOX</span></h1>
+        <p>The Best Shoes at Low Prices</p>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="text-align:center; padding:50px; color:#fff;">
+        <h2>About Shoebox</h2>
+        <p>We provide high-quality shoes at affordable prices. Our mission is to make every step comfortable and stylish.</p>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <div class="container">
+        <h2 class="grid-title">Our Affordable Shoes</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/6188443e-71b7-49f2-b0c3-619dd3ef039a/NIKE+UPLIFT+SC.png" alt="Shoe 1">
+                <h3>Running Sport Shoes</h3>
+                <p class="price">₹999 Only</p>
+                <button class="btn" onclick="addToCart('Running Sport Shoes')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://images.meesho.com/images/products/81643593/d4wnx_512.webp?width=512" alt="Shoe 2">
+                <h3>White Casual Shoes</h3>
+                <p class="price">₹799 Only</p>
+                <button class="btn" onclick="addToCart('White Casual Shoes')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240625/kCDJ/667a02521d763220fa15cb00/-473Wx593H-700123670-white-MODEL.jpg" alt="Shoe 3">
+                <h3>Black Sneakers</h3>
+                <p class="price">₹899 Only</p>
+                <button class="btn" onclick="addToCart('Black Sneakers')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/c0e52ecf9d6542bcbbe4f82ae4090306_9366/courtshot-shoes.jpg" alt="Shoe 4">
+                <h3>Comfortable Slip-ons</h3>
+                <p class="price">₹699 Only</p>
+                <button class="btn" onclick="addToCart('Comfortable Slip-ons')">Add to Cart</button>
+            </div>
+        </div>
+
+        <p id="msg"></p>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="text-align:center; padding:50px; color:#fff;">
+        <h2>Contact Us</h2>
+        <p>Email: support@shoebox.com | Phone: +91 8950736946</p>
+        <p>Address: 123 Shoebox Street, rewari, India</p>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function addToCart(productName) {
+            document.getElementById("msg").textContent =
+                productName + " added to cart ✔";
+
+            setTimeout(() => {
+                document.getElementById("msg").textContent = "";
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>
